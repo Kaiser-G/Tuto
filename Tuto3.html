@@ -9,6 +9,41 @@
 </head>
 
 <body>
+
+	<h1>Les évènements liés aux formulaire</h1>
+
+	<label for="prenom">Entrez votre prénom :</label>
+	<input type="text" id="prenom" name="prenom">
+	<br>
+	<br>
+	<fieldset id="fld">
+		<label for="nom">Entrez votre nom :</label>
+		<input type="text" id="nom" name="nom">
+
+		<label for="age">Entrez votre age :</label>
+		<input type="text" id="age" name="age">
+	</fieldset>
+
+	<br>
+	<br>
+	<select name="liste" id="liste">
+		<option value="c1" selected="selected">Choix 1</option>
+		<option value="c2">Choix 2</option>
+	</select>
+	<br>
+	<br>
+
+	<form action="#" id="formulaire">
+		<select name="liste2" id="liste">
+			<option value="c3" selected="selected">Choix 3</option>
+			<option value="c4">Choix 4</option>
+		</select>
+		<input type="submit" value="envoyer">
+	</form>
+
+
+
+
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 	<script>
 		//		// En JAVASCRIPT PUR syntaxe du programme principal
@@ -18,7 +53,30 @@
 		//		});
 		// Le programme PRINCIPAL
 		$(document).ready(function () {
-			alert("La page est chargée");
+			// alert("La page est chargée");
+
+			$('#prenom').focus(function () {
+				$(this).css('background-color', 'yellow');
+			});
+
+			$('#fld').focusin(function () {
+				$(this).css('background-color', 'green');
+			});
+
+			$('#fld').focusout(function () {
+				$(this).css('background-color', 'purple');
+			});
+
+
+			//sur le selecteur
+			$('#liste').change(function () {
+				alert("Nouvelle option selctionnée");
+			});
+
+
+			$('#formulaire').submit(function () {
+				alert("formulaire envoyer");
+			});
 		});
 
 	</script>
