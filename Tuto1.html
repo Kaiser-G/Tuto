@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+
+<body>
+	<h1>Gestion d'évènemants en Jquery</h1>
+
+	<p class="p1">Un premier paragraphe</p>
+	<p class="p2">Un deuxième paragraphe</p>
+
+
+	<!--On inclut la librairie jQuery-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+	<script>
+		//		// En JAVASCRIPT PUR syntaxe du programme principal
+		//		window.addEventListener('load', (event) => {
+		//		// Code du programme PRINCIPAL
+		//		}
+		//		});
+		// Le programme PRINCIPAL
+		$(document).ready(function () {
+			alert("La page est chargée");
+			$('p').dblclick(function () {
+				$(this).hide();
+			});
+			$('p2').hide();
+
+		});
+
+	</script>
+</body>
+
+</html>
