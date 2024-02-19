@@ -14,6 +14,9 @@
 	<p class="p1">Un premier paragraphe</p>
 	<p class="p2">Un deuxième paragraphe</p>
 
+	<p class="p3">Un troisième paragraphe</p>
+	<p class="p4">Un quatrième paragraphe</p>
+
 
 	<!--On inclut la librairie jQuery-->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -25,11 +28,38 @@
 		//		});
 		// Le programme PRINCIPAL
 		$(document).ready(function () {
-			alert("La page est chargée");
-			$('p').dblclick(function () {
-				$(this).hide();
+			// alert("La page est chargée");
+
+			// $('p').dblclick(function () {
+			// 	$(this).hide();
+			// });
+
+
+			// $('.p2').hide();
+
+			// $('.p1').mouseenter(function () {
+			// 	$('.p2').show();
+			// });
+			// $('.p1').mouseleave(function () {
+			// 	$('.p2').hide();
+			// });
+
+			//fait la même chose que au dessu mais en une seule méthode
+			$('.p2').hide();
+
+			$('.p1').hover(
+				function () { $('.p2').show(); },
+				function () { $('.p2').hide(); }
+			);
+
+			//nouvelle méthode
+			$('.p4').hide();
+			$('.p3').mousedown(function () {
+				$('.p4').show();
 			});
-			$('p2').hide();
+			$('.p3').mouseup(function () {
+				$('.p4').hide();
+			});
 
 		});
 
